@@ -9,8 +9,8 @@ import seedu.addressbook.data.exception.IllegalValueException;
 public class Address {
 
     public static final String EXAMPLE = "123, some street, #12-34, 272009";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses can be in any format";
-    public static final String ADDRESS_VALIDATION_REGEX = ".+";
+    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses must be of format: BLOCK, STREETNAME, UNIT, POSTALCODE";
+    public static final String ADDRESS_VALIDATION_REGEX = ".+[,].+[,].+[,].+";
     private static final int BLOCK_INDEX = 0;
     private static final int STREET_INDEX = 1;
     private static final int UNIT_INDEX = 2;
