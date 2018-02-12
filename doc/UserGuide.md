@@ -52,6 +52,10 @@ Examples:
 ### Listing all persons : `list`
 Shows a list of all persons in the address book.<br>
 Format: `list`
+  
+### Sorting the address book : `sort`
+Sorts the address book by alphabetical order. Irreversible.<br>
+Format: `sort`
 
 ### Finding all persons containing any keyword in their name: `find`
 Finds persons whose names contain any of the given keywords.<br>
@@ -80,7 +84,7 @@ Examples:
 * `find Betsy`<br> 
   `delete 1`<br>
   Deletes the 1st person in the results of the `find` command.
-
+  
 ### View non-private details of a person : `view`
 Displays the non-private details of the specified person.<br>
 Format: `view INDEX`
