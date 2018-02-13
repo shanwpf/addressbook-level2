@@ -5,6 +5,7 @@ import static seedu.addressbook.common.Messages.MESSAGE_INIT_FAILED;
 import static seedu.addressbook.common.Messages.MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE;
 import static seedu.addressbook.common.Messages.MESSAGE_USING_STORAGE_FILE;
 import static seedu.addressbook.common.Messages.MESSAGE_WELCOME;
+import static seedu.addressbook.common.Messages.MESSAGE_NUM_ENTRIES;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -31,9 +32,6 @@ public class TextUi {
 
     /** Format of indexed list item */
     private static final String MESSAGE_INDEXED_LIST_ITEM = "\t%1$d. %2$s";
-
-    /** Message to display number of persons in address book **/
-    private static final String MESSAGE_NUM_ENTRIES = " persons in your address book";
 
 
     /** Offset required to convert between 1-indexing and 0-indexing.  */
@@ -164,7 +162,7 @@ public class TextUi {
     }
 
     public void showNumberOfPersons(int numEntries) {
-        String result = numEntries + MESSAGE_NUM_ENTRIES;
+        String result = String.format(MESSAGE_NUM_ENTRIES, numEntries);
         showToUser(result, DIVIDER);
     }
 
