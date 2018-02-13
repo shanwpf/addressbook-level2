@@ -6,6 +6,9 @@ import java.util.List;
 
 import static seedu.addressbook.common.Messages.*;
 
+/**
+ * Formats messages to be displayed to the user
+ */
 public class Formatter {
 
     /** Format of indexed list item */
@@ -19,14 +22,21 @@ public class Formatter {
 
     private static final String DIVIDER = "===================================================";
 
+    /** Offset to convert from 0-index to 1-index **/
     public static final int DISPLAYED_INDEX_OFFSET = 1;
 
     public Formatter() {}
 
+    /**
+     * Formats the message that shows the entered command
+     */
     public static String getFormattedEnteredCommand(String input) {
-        return LINE_PREFIX + "[Command entered:" + input + "]";
+        return formatMessage("[Command entered:" + input + "]");
     }
 
+    /**
+     * Formats messages for a consistent UI layout by adding decorations
+     */
     private static String formatMessage(String... message) {
         final StringBuilder formatted = new StringBuilder();
         for(String m : message) {
@@ -38,6 +48,9 @@ public class Formatter {
         return formatted.substring(0, formatted.length()-1);
     }
 
+    /**
+     * Formats the welcome message
+     */
     public static String getFormattedWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
         return formatMessage(
@@ -51,22 +64,37 @@ public class Formatter {
         );
     }
 
+    /**
+     * Formats the goodbye message
+     */
     public static String getFormattedGoodbyeMessage() {
         return formatMessage(MESSAGE_GOODBYE, DIVIDER, DIVIDER);
     }
 
+    /**
+     * Formats the command result
+     */
     public static String getFormattedResult(CommandResult result) {
         return formatMessage(result.feedbackToUser, DIVIDER);
     }
 
+    /**
+     * Formats the init failed message
+     */
     public static String getFormattedInitFailedMessage() {
         return formatMessage(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
     }
 
+    /**
+     * Formats the enter command message
+     */
     public static String getEnterCommandMessage() {
-        return LINE_PREFIX + "Enter command: ";
+        return formatMessage("Enter command: ");
     }
 
+    /**
+     * Formats a list of persons
+     */
     public static String getFormattedIndexedList(List<String> listItems) {
         final StringBuilder formatted = new StringBuilder();
         int displayIndex = 0 + DISPLAYED_INDEX_OFFSET;
@@ -77,6 +105,9 @@ public class Formatter {
         return formatMessage(formatted.toString());
     }
 
+    /**
+     * Formats an entry from a list of persons
+     */
     private static String getIndexedListItem(int visibleIndex, String listItem) {
         return String.format(MESSAGE_INDEXED_LIST_ITEM, visibleIndex, listItem);
     }
