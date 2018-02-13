@@ -24,7 +24,7 @@ public class Formatter {
     public Formatter() {}
 
     public static String getFormattedEnteredCommand(String input) {
-        return LINE_PREFIX + "[Command entered: " + input + "]";
+        return LINE_PREFIX + "[Command entered:" + input + "]";
     }
 
     private static String formatMessage(String... message) {
@@ -34,7 +34,8 @@ public class Formatter {
                     .append(m.replace("\n", LS + LINE_PREFIX))
                     .append("\n");
         }
-        return formatted.toString().trim();
+
+        return formatted.substring(0, formatted.length()-1);
     }
 
     public static String getFormattedWelcomeMessage(String version, String storageFilePath) {
