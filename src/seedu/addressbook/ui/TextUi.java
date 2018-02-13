@@ -32,6 +32,9 @@ public class TextUi {
     /** Format of indexed list item */
     private static final String MESSAGE_INDEXED_LIST_ITEM = "\t%1$d. %2$s";
 
+    /** Message to display number of persons in address book **/
+    private static final String MESSAGE_NUM_ENTRIES = " persons in your address book";
+
 
     /** Offset required to convert between 1-indexing and 0-indexing.  */
     public static final int DISPLAYED_INDEX_OFFSET = 1;
@@ -158,6 +161,11 @@ public class TextUi {
             displayIndex++;
         }
         return formatted.toString();
+    }
+
+    public void showNumberOfPersons(int numEntries) {
+        String result = numEntries + MESSAGE_NUM_ENTRIES;
+        showToUser(result, DIVIDER);
     }
 
     /**

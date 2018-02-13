@@ -82,6 +82,7 @@ public class Main {
     private void runCommandLoopUntilExitCommand() {
         Command command;
         do {
+            ui.showNumberOfPersons(addressBook.getAllPersons().immutableListView().size());
             String userCommandText = ui.getUserCommand();
             command = new Parser().parseCommand(userCommandText);
             CommandResult result = executeCommand(command);
