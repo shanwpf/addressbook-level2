@@ -18,7 +18,7 @@ public class SortCommandTest {
     @Test
     public void execute() throws IllegalValueException {
         // Before sorting: bill, amy, dan, candy
-        // Expected after sorting: amy, bill, dan, candy
+        // Expected after sorting: amy, bill, candy, dan
         assertSortCommandBehavior(new UniquePersonList(td.amy, td.bill, td.candy, td.dan));
     }
 
